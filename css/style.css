@@ -541,6 +541,8 @@ a:hover {
     display: block;
     width: 100%;
     height: auto;
+    appearance: none;
+    -webkit-appearance: none;
   }
   .service__item__content {
     width: 100%;
