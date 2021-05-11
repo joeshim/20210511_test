@@ -715,6 +715,7 @@ a:hover {
   font-weight: 800;
   transition: 0.3s;
   appearance: none;
+  -webkit-appearance: none;
 }
 
 .contact__form__submit:hover {
