@@ -1,0 +1,765 @@
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", sans-serif;
+  line-height: 1.5;
+}
+
+/*Header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 30px;
+  background: #fff;
+  align-items: center;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.header__title {
+  width: 80px;
+}
+
+.header__title__logo {
+  width: 80px;
+}
+
+.header__nav {
+  display: block;
+  margin-left: 10px;
+}
+
+.header__nav__list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.header__nav__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.menu {
+  display: none;
+}
+.drawer-nav {
+  display: none;
+}
+
+/*Hamburger menu*/
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+  .menu {
+    display: inline-block;
+    width: 36px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+  .menu__line--top,
+  .menu__line--middle,
+  .menu__line--bottom {
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    transition: 0.5s;
+  }
+  .menu__line--top {
+    top: 0;
+  }
+  .menu__line--middle {
+    top: 14px;
+  }
+  .menu__line--bottom {
+    bottom: 0;
+  }
+  .menu.open span:nth-of-type(1) {
+    top: 14px;
+    transform: rotate(45deg);
+  }
+  .menu.open span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .menu.open span:nth-of-type(3) {
+    top: 14px;
+    transform: rotate(-45deg);
+  }
+  .drawer-nav{
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background: #fff;
+    transition: .7s;
+  }
+  .drawer-nav__list{
+    padding-top: 80px;
+    text-align: center;
+  }
+  .drawer-nav__item{
+    margin-top: 40px;
+    color: #0033cc;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .in {
+    transform: translateX(100%);
+  }
+}
+
+/*top view*/
+.top-view {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../img/mv.png) center / cover;
+  color: #fff;
+}
+
+.top-view__text-area {
+  line-height: 1.5;
+}
+
+.top-view__main-copy {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.top-view__sub-copy {
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/*top statement*/
+.top-statement {
+  background: #222;
+  padding: 80px 30px;
+}
+
+.top-statement__text-area {
+  color: #fff;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.top-statement__title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.top-statement__copy {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/*top service*/
+.top-service {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.top-service__title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.top-service__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.top-service__item {
+  width: 49%;
+  margin-top: 20px;
+  margin-right: 2%;
+  line-height: 1.5;
+}
+
+.top-service__item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.top-service__item__img {
+  width: 100%;
+  height: auto;
+}
+
+.top-service__item__title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.top-service__button {
+  display: block;
+  width: 300px;
+  text-align: center;
+  font-weight: 800;
+  padding: 10px;
+  background: #cd0224;
+  color: #fff;
+  margin: 40px auto 0;
+  line-height: 1.5;
+}
+
+/*top service mobile*/
+@media screen and (max-width: 768px){
+  .top-service {
+    width: 85%;
+  }
+  .top-service__item {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/*top news*/
+.top-news {
+  padding: 80px 30px;
+  background: #222;
+}
+
+.top-news__content {
+  max-width: 1080px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.top-news__content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-news__content__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.top-news__content__button {
+  width: 160px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 800;
+  padding: 7px;
+  background: #cd0224;
+  color: #fff;
+}
+
+.top-news__list {
+  margin-top: 20px;
+}
+
+.top-news__item {
+  margin-top: 10px;
+}
+
+.top-news__item__link {
+  display: flex;
+  background: #fff;
+  padding: 20px;
+}
+
+.top-news__item__date {
+  margin-right: 10px;
+}
+
+.top-news__item__title {
+  font-weight: 800;
+}
+
+/*top news mobile*/
+@media screen and (max-width: 768px) {
+  .top-news__item__link {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/*top blog*/
+.top-blog {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 0;
+  line-height: 1.5;
+}
+
+.top-blog__title {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.top-blog__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.top-blog__item {
+  width: 32%;
+  margin-right: 2%;
+  margin-top: 20px;
+}
+
+.top-blog__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.top-blog__img {
+  width: 100%;
+  height: auto;
+}
+
+.top-blog__item__date {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.top-blog__item__title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.top-blog__button {
+  display: block;
+  width: 300px;
+  text-align: center;
+  font-weight: 800;
+  padding: 10px;
+  background: #cd0224;
+  color: #fff;
+  margin: 40px auto 0;
+  line-height: 1.5;
+}
+
+/*top blog mobile*/
+@media screen and (max-width: 768px){
+  .top-blog {
+    width: 85%;
+  }
+  .top-blog__item {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/*top other*/
+.top-other__list {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  padding-bottom: 80px;
+}
+
+.top-company__item {
+  width: 50%;
+}
+
+.top-company__link {
+  display: inline-block;
+  width: 100%;
+  line-height: 10;
+  text-align: center;
+  background: #cd0224;
+}
+
+.top-recruit__item {
+  width: 50%;
+}
+
+.top-recruit__link {
+  display: inline-block;
+  width: 100%;
+  line-height: 10;
+  text-align: center;
+  background: #222;
+}
+
+/*top contact*/
+.top-contact {
+  background: #f5f6f9;
+  text-align: center;
+  padding: 80px 30px;
+  line-height: 1.5;
+}
+
+.top-contact__title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.top-contact__text {
+  margin-top: 10px;
+}
+
+.top-contact__button {
+  display: block;
+  width: 300px;
+  text-align: center;
+  font-weight: 800;
+  padding: 10px;
+  background: #cd0224;
+  color: #fff;
+  margin: 40px auto 0;
+  line-height: 1.5;
+}
+
+/*footer*/
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 20px 10px;
+  color: #fff;
+  background: #222;
+  line-height: 1.5;
+}
+
+.footer__nav__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__nav__item::after {
+  content: "|";
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.footer__nav__item:last-child:after {
+  display: none;
+}
+
+/*footer mobile*/
+@media screen and (max-width: 768px) {
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer__copyright {
+    margin: 0 auto;
+  }
+  .footer__nav__item {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .footer__nav__item::after {
+    display: none;
+  }
+}
+
+/*page view*/
+.page-view {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: url(../img/mv.png) center / cover;
+}
+
+.page-view__title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/*service content*/
+.service__main {
+  padding: 80px 30px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.service__item {
+  padding: 20px 0;
+  border-top: 1px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service__item:last-child {
+  border-bottom: 1px solid #222;
+}
+
+.service__item__img {
+  width: 290px;
+  height: auto;
+}
+
+.service__item__content {
+  width: calc(100% - 330px);
+  line-height: 1.5;
+}
+
+.service__item__title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 768px) {
+  .service__main {
+    width: 85%;
+  }
+  .service__item__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .service__item__content {
+    width: 100%;
+  }
+}
+
+/*news content*/
+.news__main {
+  padding: 80px 30px;
+  line-height: 1.5;
+}
+
+.news__item:not(:first-child) {
+  margin-top: 10px;
+}
+
+.news__item__link {
+  display: flex;
+  align-items: center;
+  border: 1px solid #222;
+  padding: 20px;
+}
+
+.news__item__date {
+  margin-right: 10px;
+}
+
+.news__item__title {
+  font-weight: 800;
+}
+
+/*top news mobile*/
+@media screen and (max-width: 768px) {
+  .news__item__link {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/*company content*/
+.company__main {
+  padding: 80px 30px;
+  max-width: 960px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.company__info {
+  width: 100%;
+  border-bottom: 1px solid #222;
+}
+
+.company__info__head {
+  font-weight: 800;
+  width: 30%;
+  border-top: 1px solid #222;
+  padding: 20px 0;
+}
+
+.company__info__deta {
+  width: 70%;
+  border-top: 1px solid #222;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .company__main {
+    width: 90%;
+    padding: 80px 0;
+  }
+}
+
+/*recruit content*/
+
+.recruit__main {
+  padding: 80px 30px;
+  max-width: 960px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.recruit__content__title {
+  font-size: 26px;
+  font-weight: 800;
+  border-bottom: 1px solid #222;
+}
+
+.recruit__content__copy {
+  margin-top: 20px;
+}
+
+.recruit__table {
+  width: 100%;
+  border: 1px solid #222;
+  margin-top: 20px;
+}
+
+.recruit__content:not(:first-child) {
+  margin-top: 80px;
+}
+
+.recruit__table__head {
+  font-weight: 800;
+  width: 30%;
+  border-right: 1px solid #222;
+  border-top:  1px solid #222;
+  background: #f5f6f9;
+  padding: 10px;
+}
+
+.recruit__table__data {
+  width: 70%;
+  border-top: 1px solid #222;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .recruit__main {
+    width: 90%;
+    padding: 80px 0;
+  }
+}
+
+/*contact content*/
+.contact__main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 30px;
+  line-height: 1.5;
+}
+
+.contact__form__item__name {
+  font-weight: 800;
+}
+
+.contact__form__item__input {
+  margin-top: 5px;
+  font-size: 16px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.contact__form__item:not(:first-child) {
+  margin-top: 20px;
+}
+
+.contact__form__item__required {
+  color: #cd0224;
+  margin-left: 5px;
+}
+
+.contact__form__item__textarea {
+  margin-top: 5px;
+  font-size: 16px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.contact__form__submit {
+  width: 300px;
+  margin: 20px auto 0;
+  padding: 10px;
+  border: none;
+  display: block;
+  background: #000;
+  color: #fff;
+  font-weight: 800;
+  transition: 0.3s;
+  appearance: none;
+}
+
+.contact__form__submit:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__main {
+    width: 90%;
+    padding: 80px 0;
+  }
+}
+
+/*
+    <div class="contact__main">
+      <form class="contact__form" action="index.html" method="post
+      ">
+        <div class="contact__form__item">
+          <label class="contact__form__item__name" for="company">会社名</label>
+          <input type="text" id="company" class="contact__form__item__input">
+        </div>
+        <div class="contact__form__item">
+          <label class="contact__form__item__name" for="name">お名前<span class="contact__form__item__required">*</span></label>
+          <input type="text" id="name" class="contact__form__item__input" required>
+        </div>
+        <div class="contact__form__item">
+          <label class="contact__form__item__name" for="email">メールアドレス<span class="contact__form__item__required">*</span></label>
+          <input type="email" id="email" class="contact__form__item__input" required>
+        </div>
+        <div class="contact__form__item">
+          <label class="contact__form__item__name" for="comment">お問い合わせ内容<span
+              class="contact__form__item__required">*</span></label>
+          <textarea id="comment" cols="80" rows="8" class="contact__form__item__texterea"></textarea>
+        </div>
+        <input type="submit" value="お申し込み" class="contact__form__submit">
+      </form>
+    </div>
+    <!--contact main end-->
+    <!--contact-->
+    <div class="top-contact">
+      <h2 class="top-contact__title">お問い合わせ</h2>
+      <p class="top-contact__text">お仕事のご依頼や採用に関してはお問い合わせにて承っております。</p>
+      <a href="contact.html" class="top-contact__button">お問い合わせ</a>
+    </div>
+*/
+
+
+
